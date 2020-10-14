@@ -1,0 +1,17 @@
+<div class="text-center"> Sign Up </div>
+
+<div class="row">
+  <div class="col-md-4 offset-4">
+    <%= form_with(model: @user, local: true) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :username, 'Username' %>
+      <%= f.text_field :username, class: 'mb-1 form-control' %>
+
+      <%= f.label :fullname, 'Fullname' %>
+      <%= f.text_field :fullname, class: 'mb-1 form-control' %>
+
+      <%= f.submit 'Create an account', class: 'mt-2 btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
