@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:show]
+
   def show
     @user = User.find(params[:id])
+    @opinions = @user.opinions.ordered_by_most_recent
   end
 
   def new
@@ -11,8 +14,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:notice] = 'Welcome to the app!'
-      redirect_to user_path(@user)
+      log_in @user
+      flash[:notice] = 'Successfully registered'
+      redirect_to root_path
     else
       render :new
     end
