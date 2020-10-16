@@ -13,8 +13,9 @@ class OpinionsController < ApplicationController
 
   def create
     @opinion = current_user.opinions.create(opinion_params)
+    
     if @opinion.save
-      flash[:notice] = 'Your opinion has been saved successfully'  
+      flash[:notice] = 'Opinion was successfully created'  
     else
       flash[:danger] = 'Could not save your opinion, Pleas try again!!!'
     end
