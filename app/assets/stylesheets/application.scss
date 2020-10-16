@@ -26,9 +26,15 @@ body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
+  position: fixed;
+  left: 0;
+  width: 315px;
   overflow-y: hidden !important;
 }
 
+.bg-height {
+  height: calc(100% - 100px);
+}
 .side-pad {
   padding-left: 0 !important;
   background-color: rgb(231, 235, 238);
@@ -57,9 +63,14 @@ body {
 }
 
 .opinion-conteiner {
-  border-right: 1px solid #213246;
+  border-right: 1px solid rgb(51, 51, 51);
 }
 
 .opinion-partials {
   background-color: #ffffff;
+}
+
+.font-type {
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
