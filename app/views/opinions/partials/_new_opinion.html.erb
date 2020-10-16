@@ -1,1 +1,9 @@
-<h3> Appears here </h3>
+<div>
+  <% @opinions.each do |opinion| %>
+    <div>
+      <img src="https://bulma.io/images/placeholders/24x24.png">
+      <%= opinion.author.fullname %>
+      <%= opinion.Text %>
+    </div>
+  <% end %>
+</div>
