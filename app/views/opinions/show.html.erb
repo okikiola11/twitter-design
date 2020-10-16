@@ -10,7 +10,9 @@
     <div class="d-flex bg-height" >
       <div class="col col-lg-12 px-4 py-4">
         <div class="opinion-partials px-3 py-3 mb-4">
-          <span>Show here</span>
+          <% @opinion.each do |opinion| %>
+            <span><%= opinion.Text %></span>
+          <% end %>
         </div>
       </div>      
     </div>   

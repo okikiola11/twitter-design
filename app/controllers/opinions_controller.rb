@@ -25,21 +25,22 @@ class OpinionsController < ApplicationController
   end
 
   def edit
+    @opinion = current_user.opinions.find(params[:id])
   end
 
   def update
-    @opinion = Opinion.update(Text: params[:Text])
-    if @opinion
-      redirect_to opinion_path(@opinion), :success => 'Successfully updated'
+    @opinion = current_user.opinions.find(params[:id])
+    if @opinion.update(opinion_params)
+      redirect_to @opinion, :success => 'Successfully updated'
     else
-      render root_path, alert: 'Something went wrong'
+      render 'edit', alert: 'Something went wrong'
     end
   end
 
   def destroy
   end
 
-  private 
+  private
 
   def opinion_params
     params.require(:opinion).permit(:author_id, :Text)
