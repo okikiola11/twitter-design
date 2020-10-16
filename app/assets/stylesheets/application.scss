@@ -13,12 +13,53 @@
  */
 body {
   box-sizing: border-box; 
+  padding: 0;
+  margin: 0;
 }
 
 .bg-color { 
   background-color: rgb(80, 164, 226); 
 }
 
+.side-nav {
+  background: #213246;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  overflow-y: hidden !important;
+}
+
 .side-pad {
   padding-left: 0 !important;
+  background-color: rgb(231, 235, 238);
+}
+
+.container-fluid {
+  padding:0 !important; 
+  overflow: hidden !important;
+}
+
+.user-profile h6 {
+  color: #667b90;
+}
+
+.following h5,
+.following h6,
+.followers h5,
+.followers h6,
+.home {
+  color: #667b90;
+}
+
+.home a:active {
+  cursor: pointer;
+  color: #667b90;
+}
+
+.opinion-conteiner {
+  border-right: 1px solid #213246;
+}
+
+.opinion-partials {
+  background-color: #ffffff;
 }

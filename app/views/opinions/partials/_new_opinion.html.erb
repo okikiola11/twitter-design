@@ -1,9 +1,22 @@
 <div>
   <% @opinions.each do |opinion| %>
-    <div>
-      <img src="https://bulma.io/images/placeholders/24x24.png">
-      <%= opinion.author.fullname %>
-      <%= opinion.Text %>
+    <div  class="pt-3 pl-2">
+      <div >
+        <img src="https://bulma.io/images/placeholders/24x24.png">
+        <%= opinion.author.fullname %>
+        <%= opinion.Text %>
+      </div>
+
+      <div>
+        <span><i class="far fa-heart"></i></span>
+        <%= link_to edit_opinion_path(opinion) do %>
+          <span><i class="fas fa-pencil-alt"></i></span>
+        <% end %>
+        
+        <%= link_to opinion_path(opinion) do %>
+          <span><i class="fas fa-trash-alt"></i></span>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>

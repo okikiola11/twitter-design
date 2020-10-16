@@ -1,4 +1,31 @@
-<div>Side nav
+<div class="side-nav px-md-5">
+  <div class="user-profile d-flex justify-content-around py-3 ">
+    <div>
+      <figure class="image is-24x24">
+        <img src="https://bulma.io/images/placeholders/32x32.png">
+      </figure>
+    </div>
+    <h6><%= current_user.fullname %></h6>
+  </div>
 
-  <div><%= link_to 'Log out', logout_path, method: :delete %></div>
+  <div class="user-followings d-flex justify-content-around py-4">
+    <div class="following">
+      <h5>184</h5>
+      <h6>Following</h6>
+    </div>
+
+    <div class="followers">
+      <h5>184</h5>
+      <h6>Followers</h6>
+    </div>
+  </div>
+
+  <div class="links py-3">
+    <div class="home py-3"><%= link_to 'Home', root_path %></div>
+    <div class="home py-3">Profile</div>
+    <div class="home py-3">Categories</div>
+    <div><%= link_to 'Log out', logout_path, class: 'home py-3', method: :delete %></div>
+  </div>
+
+  
 </div>

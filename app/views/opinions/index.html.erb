@@ -1,23 +1,28 @@
 <div class="row">
-  <div class="col col-lg-3" style="border:1px solid black;">
+  <div class="col col-lg-3" style="padding-right: 0;">
     <%= render 'layouts/side_nav' %>
   </div>
   <div class="col side-pad" style="border:1px solid black; ">
     <div class="col-lg-12" style="padding:0">
       <%= render 'layouts/header' %>
     </div>
+ 
+    <div class="col col-lg-8 opinion-conteiner px-4 py-4" style="border:1px solid black;  ">
+      <div class="opinion-partials px-3 py-3 mb-4">
+        <div>tweet something</div>
+        <%= render 'opinions/partials/form' %>
+      </div>
 
-    <div class="row" style="border:1px solid black; padding: 0;">
-      
-      <div class="col col-lg-8" style="border:1px solid black; ">
-        <div><%= render 'opinions/partials/form' %></div>
-        <div><%= render 'opinions/partials/new_opinion' %></div>
+      <div class="opinion-partials px-3 py-3">
+        <div> 4 new opinions </div>
+        <%= render 'opinions/partials/new_opinion' %>
       </div>
-      <div class="col">
-        <h6>hello there</h6>
-      </div>
-      
     </div>
+
+    <div class="col">
+      <h6>View more</h6>
+    </div>
+      
   </div>
 </div>
 

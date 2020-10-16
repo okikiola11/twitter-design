@@ -28,6 +28,12 @@ class OpinionsController < ApplicationController
   end
 
   def update
+    @opinion = Opinion.update(Text: params[:Text])
+    if @opinion
+      redirect_to opinion_path(@opinion), :success => 'Successfully updated'
+    else
+      render root_path, alert: 'Something went wrong'
+    end
   end
 
   def destroy
