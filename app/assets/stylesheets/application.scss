@@ -15,6 +15,7 @@ body {
   box-sizing: border-box; 
   padding: 0;
   margin: 0;
+  font-size: 10px;
 }
 
 .bg-color { 
@@ -73,4 +74,8 @@ body {
 .font-type {
   text-transform: uppercase;
   margin-bottom: 8px;
+}
+
+.followed-by {
+  font-size: 0.9rem;
 }

@@ -2,9 +2,13 @@
   <% @opinions.each do |opinion| %>
     <div class="pt-3 pl-2">
       <div>
-        <img src="https://bulma.io/images/placeholders/24x24.png">
-        <%= opinion.author.fullname %>
-        <%= opinion.Text %>
+        <div class="d-flex mb-1">
+          <div><img src="https://bulma.io/images/placeholders/24x24.png"></div>
+          <div class="pl-3">
+            <div><%= opinion.author.fullname %></div>
+            <div><%= opinion.Text %></div>
+          </div>
+        </div>    
 
         <div>    
           <span><i class="far fa-heart"></i></span>
