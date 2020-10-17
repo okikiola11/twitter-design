@@ -33,13 +33,20 @@ class OpinionsController < ApplicationController
   def update
     @opinion = current_user.opinions.find(params[:id])
     if @opinion.update(opinion_params)
-      redirect_to @opinion, :success => 'Successfully updated'
+      redirect_to @opinion, notice: 'Successfully updated'
     else
       render 'edit', alert: 'Something went wrong'
     end
   end
 
   def destroy
+    @opinion = current_user.opinions.find(params[:id])
+    if @opinion.destroy
+      flash[notice] = 'Opinion has been deleted successfully'
+    else
+      flash[:danger] = 'Please, try again!!!'
+    end
+    redirect_to root_path
   end
 
   private
