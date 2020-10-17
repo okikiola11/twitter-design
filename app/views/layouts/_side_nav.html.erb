@@ -2,7 +2,12 @@
   <div class="user-profile d-flex justify-content-around py-3 ">
     <div>
       <figure class="image is-24x24">
-        <img src="https://bulma.io/images/placeholders/32x32.png">
+        <% unless current_user.photo.nil? %>
+          <%= image_tag current_user.photo.thumb.url, class:"avatar" %>    
+        <% else %>
+          <img src="https://via.placeholder.com/50" alt="">
+        <% end %>
+
       </figure>
     </div>
     <h6><%= current_user.fullname %></h6>
@@ -25,6 +30,5 @@
     <div class="home py-3"><%= link_to 'Profile', user_path(@current_user) %></div>
     <div><%= link_to 'Log out', logout_path, class: 'home py-3', method: :delete %></div>
   </div>
-
-  
+ 
 </div>
