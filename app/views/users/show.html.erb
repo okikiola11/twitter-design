@@ -1,10 +1,46 @@
 <div class="row">
-  <div class="offset-4 col-md-4">
-    <h3 class="text-center">
-      <%= @user.username %>
-    </h3>
-    <h3 class="text-center ">
-      <%= @user.fullname %>
-    </h3>
+  <div class="col col-lg-3">
+    <%= render 'layouts/side_nav' %>
+  </div>
+
+  <div class="col side-pad">
+    <div class="col-lg-12" style="padding:0">
+      <%= render 'layouts/header' %>
+    </div>
+    <div class="d-flex bg-height" >
+      <div class="col col-lg-12 px-4 py-4">
+        <div class="opinion-partials px-3 py-3 mb-4">
+          <div class="font-type mb-3">all opinion</div>                       
+            <% @user.opinions.each do |user| %>
+              <div class="mb-4">
+                <div class="d-flex mb-1">
+                  <div><img src="https://bulma.io/images/placeholders/24x24.png"></div>
+                  <div class="pl-3">
+                      <div><%= user.author.fullname %> </div>
+                      <div> <%= user.Text %></div>
+                  </div>
+                </div>
+
+                <div>    
+                  <span><i class="far fa-heart"></i></span>
+
+                  <%= link_to edit_opinion_path(user) do %>
+                    <span><i class="fas fa-pencil-alt"></i></span>
+                  <% end %>
+
+                  <%= link_to opinion_path(user) do %>
+                    <span><i class="fas fa-trash-alt"></i></span>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>  
+        </div>
+      </div>      
+    </div>   
+      
   </div>
 </div>
+
+
+
+ 

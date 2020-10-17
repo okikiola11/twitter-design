@@ -13,6 +13,7 @@ class OpinionsController < ApplicationController
 
   def create
     @opinion = current_user.opinions.create(opinion_params)
+    @opinion.author_id = current_user.id
     
     if @opinion.save
       flash[:notice] = 'Opinion was successfully created'  
@@ -44,7 +45,7 @@ class OpinionsController < ApplicationController
   private
 
   def opinion_params
-    params.require(:opinion).permit(:author_id, :Text)
+    params.require(:opinion).permit(:Text)
   end
 
   def set_opinion

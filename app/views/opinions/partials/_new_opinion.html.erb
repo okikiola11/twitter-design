@@ -1,23 +1,25 @@
 <div>
   <% @opinions.each do |opinion| %>
-    <div  class="pt-3 pl-2">
-      <div >
+    <div class="pt-3 pl-2">
+      <div>
         <img src="https://bulma.io/images/placeholders/24x24.png">
         <%= opinion.author.fullname %>
         <%= opinion.Text %>
-      </div>
 
-      <div>
-        <span><i class="far fa-heart"></i></span>
-       
-        <%= link_to edit_opinion_path(opinion) do %>
-          <span><i class="fas fa-pencil-alt"></i></span>
-        <% end %>
-        
-        <%= link_to opinion_path(opinion) do %>
-          <span><i class="fas fa-trash-alt"></i></span>
-        <% end %>
+        <div>    
+          <span><i class="far fa-heart"></i></span>
+          
+          <%= link_to edit_opinion_path(opinion) do %>
+            <span><i class="fas fa-pencil-alt"></i></span>
+          <% end %>
+  
+          <%= link_to opinion_path(opinion), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-default' do %>
+            <span><i class="fas fa-trash-alt"></i></span>   
+          <% end %>
+          
+        </div>
       </div>
+      
     </div>
   <% end %>
 </div>

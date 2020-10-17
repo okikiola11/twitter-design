@@ -22,8 +22,7 @@
 
   <div class="links py-3">
     <div class="home py-3"><%= link_to 'Home', root_path %></div>
-    <div class="home py-3">Profile</div>
-    <div class="home py-3">Categories</div>
+    <div class="home py-3"><%= link_to 'Profile', user_path(@current_user) %></div>
     <div><%= link_to 'Log out', logout_path, class: 'home py-3', method: :delete %></div>
   </div>
 
