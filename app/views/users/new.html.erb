@@ -12,12 +12,15 @@
       <%= f.text_field :fullname, class: 'mb-1 form-control' %>
 
       <%= f.label :photo, 'My avatar' %>
-      <%= f.file_field :photo, class: 'form-control', direct_upload: true %>
+      <%= f.file_field :photo, class: 'form-control' %>
+      <%= f.hidden_field(:photo_cache) %>
 
       <%= f.label :coverimage, 'Cover image' %>
-      <%= f.file_field :coverimage, class: 'form-control', direct_upload: true%>
+      <%= f.file_field :coverimage, class: 'form-control' %>
 
       <%= f.submit 'Create an account', class: 'mt-2 btn btn-primary' %>
+      
+      <%= hidden_field_tag :direct, params[:direct] %>
     <% end %>
   </div> 
 </div>
