@@ -3,15 +3,15 @@
   <h5>Who to Follow</h5>
 
   <div class="d-flex py-2">
-    <% unless current_user.following?(@user) %>
-      <div>
-        <div>
-        <%= image_tag current_user.photo.thumb.url, target:"_blank" %></div>
-      </div>
-      <div class="pl-3">
-        <h6><%= current_user.fullname %></h6>
-        <div class="followed-by">Followed by @williams</div>
-      </div>
-    <% end %>
+        <% @following.author.each do |user| %>
+              <%= link_to user_path(user), class: 'user' do %>
+                <% unless user[:photo].nil? %>
+                  <%= image_tag user.photo.thumb.url, class: 'photo' %>
+                <% else %>
+                  <%= gravatar_for user, size: 50 %>
+                <% end %>
+                <h6><%= user.fullname %></h6>
+              <% end %>
+        <% end %>
   </div>
 </div>

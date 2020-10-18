@@ -23,22 +23,22 @@
         </div>
         <div>
           <div class="py-2"><img src="https://bulma.io/images/placeholders/48x48.png"></div>
-          <div><h6>Okikiola</h6></div>
-          <h6>@jdoe</h6>
+          <div><h6><%= @user.fullname %></h6></div>
+          <h6>@<%= @user.username %></h6>
         </div>
       </div>
     </div>
     <div class="pt-4 d-flex justify-content-around border-top">
       <div>
-        <div class="text-center">0</div>
+        <div class="text-center"><%= @user.opinions.count %></div>
         <div>Tweets</div>
       </div>
       <div>
-        <div class="text-center">0</div>
+        <div class="text-center"><%= @user.followers.count %></div>
         <div>Followers</div>
       </div>
       <div>
-        <div class="text-center">0</div>
+        <div class="text-center"><%= @user.following.count %></div>
         <div>Following</div>
       </div>
     </div>

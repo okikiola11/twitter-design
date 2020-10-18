@@ -20,7 +20,8 @@ class User < ApplicationRecord
 
   def unfollow(user)
     # followed.delete(user)
-    active_followings.find_by(followed_id: user.id).destroy
+    following.delete(user)
+    #active_followings.find_by(followed_id: user.id).destroy
   end
 
   def following?(user)
@@ -28,7 +29,11 @@ class User < ApplicationRecord
     following.include?(user)
   end
 
-  def not_following
-    User.where.not(id: followed).where.not(id: id).order('created_at DESC')
+  def followers?(user)
+    followers.include?(user)
+  end
+
+  def not_following?
+    User.where.not(id: following).where.not(id: id).order('created_at DESC')
   end
 end
