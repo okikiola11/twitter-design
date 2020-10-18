@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   resources :followings, only: [:create, :destroy]
   resources :opinions
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] 
+  
 
   root 'opinions#index'
 end

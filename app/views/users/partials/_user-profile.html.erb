@@ -1,0 +1,47 @@
+<div class="px-1 py-3">
+
+  <div class="py-2">
+    <div class="d-flex flex-column mb-3">
+      <div class="text-center">
+      
+        <div>
+          <% if current_user.id != @user.id %>
+            <%# Follow %>
+            <% unless current_user.following?(@user) %>
+              <%= form_for(current_user.active_followings.build) do |f| %>
+                <div><%= hidden_field_tag :followed_id, @user.id %></div>
+                <%= f.submit 'Follow', class: 'btn btn-primary' %>
+              <% end %>
+            <% else %>
+              <%= form_for(current_user.active_followings.find_by(followed_id: @user.id),
+                html: { method: :delete }) do |f| %>
+                <%= f.submit "Unfollow", class: 'btn' %>
+              <% end %>
+            <% end %>
+            <%# Unfollow %>
+          <% end %>
+        </div>
+        <div>
+          <div class="py-2"><img src="https://bulma.io/images/placeholders/48x48.png"></div>
+          <div><h6>Okikiola</h6></div>
+          <h6>@jdoe</h6>
+        </div>
+      </div>
+    </div>
+    <div class="pt-4 d-flex justify-content-around border-top">
+      <div>
+        <div class="text-center">0</div>
+        <div>Tweets</div>
+      </div>
+      <div>
+        <div class="text-center">0</div>
+        <div>Followers</div>
+      </div>
+      <div>
+        <div class="text-center">0</div>
+        <div>Following</div>
+      </div>
+    </div>
+
+  </div>
+</div>

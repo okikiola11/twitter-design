@@ -11,7 +11,7 @@
               <% end %>
           </div>
           <div class="pl-3">
-            <div><%= opinion.author.fullname %></div>
+            <div><%= link_to opinion.author.fullname, user_path(opinion.author.id) %></div>
             <div><%= opinion.Text %></div>
           </div>
         </div>    

@@ -15,12 +15,12 @@
 
   <div class="user-followings d-flex justify-content-around py-4">
     <div class="following">
-      <h5>184</h5>
+      <h5><%= current_user.following.count %></h5>
       <h6>Following</h6>
     </div>
 
     <div class="followers">
-      <h5>184</h5>
+      <h5><%= current_user.followers.count %></h5>
       <h6>Followers</h6>
     </div>
   </div>
