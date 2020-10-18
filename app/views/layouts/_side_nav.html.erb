@@ -1,5 +1,5 @@
-<div class="side-nav px-md-5">
-  <div class="user-profile d-flex justify-content-around py-3 ">
+<div class="side-nav">
+  <div class="user-profile d-flex pt-5 px-md-5">
     <div>
       <figure class="image is-24x24">
         <% unless current_user.photo.nil? %>
@@ -10,22 +10,22 @@
 
       </figure>
     </div>
-    <h6><%= current_user.fullname %></h6>
+    <h6 class="pl-3 pt-3"><%= current_user.fullname %></h6>
   </div>
 
   <div class="user-followings d-flex justify-content-around py-4">
     <div class="following">
-      <h5><%= current_user.following.count %></h5>
+      <h5 class="text-center"><%= current_user.following.count %></h5>
       <h6>Following</h6>
     </div>
 
     <div class="followers">
-      <h5><%= current_user.followers.count %></h5>
+      <h5 class="text-center"><%= current_user.followers.count %></h5>
       <h6>Followers</h6>
     </div>
   </div>
 
-  <div class="links py-3">
+  <div class="links py-3 px-md-5">
     <div class="home py-3"><%= link_to 'Home', root_path %></div>
     <div class="home py-3"><%= link_to 'Profile', user_path(@current_user) %></div>
     <div><%= link_to 'Log out', logout_path, class: 'home py-3', method: :delete %></div>

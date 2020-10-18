@@ -10,6 +10,5 @@ Rails.application.routes.draw do
   resources :opinions
   resources :users, only: [:index, :show] 
   
-
   root 'opinions#index'
 end

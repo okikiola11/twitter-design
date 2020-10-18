@@ -19,13 +19,10 @@ class User < ApplicationRecord
   end
 
   def unfollow(user)
-    # followed.delete(user)
     following.delete(user)
-    #active_followings.find_by(followed_id: user.id).destroy
   end
 
   def following?(user)
-    # followed.include?(user)
     following.include?(user)
   end
 
@@ -35,6 +32,6 @@ class User < ApplicationRecord
 
   # Get all users
   def self.all_users(user_id)
-    where.not(id: user_id)
+    User.where('id != ?', user_id)
   end
 end

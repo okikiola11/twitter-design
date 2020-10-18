@@ -22,7 +22,7 @@
           <% end %>
         </div>
         <div>
-          <div class="py-2"><img src="https://bulma.io/images/placeholders/48x48.png"></div>
+          <div class="py-2"><%= image_tag @user.photo.thumb.url, class:"rounded-circle" %></div>
           <div><h6><%= @user.fullname %></h6></div>
           <h6>@<%= @user.username %></h6>
         </div>

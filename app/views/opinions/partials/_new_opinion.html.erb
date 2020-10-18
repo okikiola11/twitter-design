@@ -16,16 +16,22 @@
           </div>
         </div>    
 
-        <div>    
-          <span><i class="far fa-heart"></i></span>
+        <div class="d-flex mt-1">    
+          <div class="mr-3">
+            <span class="icon-color "><i class="far fa-heart"></i></span>
+          </div>
           
-          <%= link_to edit_opinion_path(opinion) do %>
-            <span><i class="fas fa-pencil-alt"></i></span>
+         <div class="mr-3">
+           <%= link_to edit_opinion_path(opinion) do %>
+            <span class="icon-color"><i class="fas fa-pencil-alt "></i></span>
           <% end %>
+         </div>
   
-          <%= link_to opinion_path(opinion), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-default' do %>
-            <span><i class="fas fa-trash-alt"></i></span>   
+         <div>
+           <%= link_to opinion_path(opinion), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-default' do %>
+            <span class="icon-color"><i class="fas fa-trash-alt"></i></span>   
           <% end %>
+         </div>
           
         </div>
       </div>

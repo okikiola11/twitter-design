@@ -7,7 +7,7 @@ class FollowingsController < ApplicationController
   end
 
   def destroy
-    user = Following.find(params[:id]).followed
+    user = Following.find(params[:id]).followed_id
     current_user.unfollow(user)
     redirect_to root_path
   end
