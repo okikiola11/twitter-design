@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :followings, only: [:create, :destroy]
-  resources :opinions
+  resources :opinions do
+    resources :likes
+  end
   resources :users
   
   root 'opinions#index'

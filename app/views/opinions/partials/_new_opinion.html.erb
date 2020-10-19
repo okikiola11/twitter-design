@@ -18,7 +18,11 @@
 
         <div class="d-flex mt-1">    
           <div class="mr-3">
-            <span class="icon-color "><i class="far fa-heart"></i></span>
+            <span class="icon-color ">
+              <%= button_to opinion_likes_path(opinion), class: 'btn', method: :post do %>
+                  <i class="far fa-heart" aria-hidden="true"></i>
+              <% end %>
+            </span>
           </div>
           
          <div class="mr-3">
