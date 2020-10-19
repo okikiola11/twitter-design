@@ -1,7 +1,7 @@
 class OpinionsController < ApplicationController
-  before_action :set_opinion, only: [:show, :edit, :update]
+  before_action :set_opinion, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @opinions = Opinion.all.order('created_at DESC')

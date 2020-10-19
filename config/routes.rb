@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :opinions do
     resources :likes, only: [:create, :destroy]
   end
-  resources :users
+  resources :users, except: [:new] 
   
   root 'opinions#index'
 end

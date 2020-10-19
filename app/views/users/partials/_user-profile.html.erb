@@ -5,7 +5,7 @@
       <div class="text-center">
       
         <div>
-          <% if current_user.id != @user.id %>
+          <% if !current_user?(@user) %>
             <%# Follow %>
             <% unless current_user.following?(@user) %>
               <%= form_for(current_user.active_followings.build) do |f| %>

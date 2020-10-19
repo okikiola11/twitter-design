@@ -10,12 +10,8 @@
 
     <div class="d-flex">
       <div class="col col-lg-9 opinion-conteiner" style="padding:0;">
-        <% unless @user.coverimage.nil? %>
-          <div><%= image_tag @user.coverimage.standard.url, class: "cover-img" %></div>
-        <% else %>
-            <img src="https://via.placeholder.com/150" alt="" class="cover-img">
-        <% end %>      
-        
+        <%= user_coverimage(@user) %>
+   
         <div class="opinion-partials px-3 py-3">
           <%= render 'users/partials/user-opinions' %>
         </div>         
