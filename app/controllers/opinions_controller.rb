@@ -1,5 +1,5 @@
 class OpinionsController < ApplicationController
-  before_action :set_opinion, only: [:show, :edit, :update, :destroy]
+  before_action :set_opinion, only: [:show, :edit, :update]
   before_action :logged_in_user
 
   def index
@@ -13,7 +13,7 @@ class OpinionsController < ApplicationController
   end
 
   def create
-    @opinion = current_user.opinions.create(opinion_params)
+    @opinion = current_user.opinions.build(opinion_params)
     @opinion.author_id = current_user.id
     
     if @opinion.save
@@ -38,16 +38,6 @@ class OpinionsController < ApplicationController
     else
       render 'edit', alert: 'Something went wrong'
     end
-  end
-
-  def destroy
-    @opinion = current_user.opinions.find(params[:id])
-    if @opinion.destroy
-      flash[notice] = 'Opinion has been deleted successfully'
-    else
-      flash[:danger] = 'Please, try again!!!'
-    end
-    redirect_to root_path
   end
 
   private
