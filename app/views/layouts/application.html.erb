@@ -13,9 +13,17 @@
 
   <body>
     <div class="container-fluid"> 
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% if flash[:notice] %>
+        <div>
+          <p class="notice text-center text-success"><%= notice %></p>
+        </div>
       <% end %>
+      <% if flash[:alert] %>
+        <div>
+          <p class="alert text-center text-danger"><%= alert %></p>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>

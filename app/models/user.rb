@@ -14,7 +14,6 @@ class User < ApplicationRecord
 
   # Follow another user
   def follow(user)
-    # followed << user if !self.following?(user) && self != user
     active_followings.create(followed_id: user.id)
   end
 
