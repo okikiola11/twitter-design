@@ -17,26 +17,37 @@
         </div>    
 
         <div class="d-flex mt-1">    
-          <div class="mr-3">
-            <span class="icon-color ">
-              <%= button_to opinion_likes_path(opinion), class: 'btn', method: :post do %>
-                  <i class="far fa-heart" aria-hidden="true"></i>
+          <div class="">
+            <div class="d-flex"> 
+              <div class="icon-color ">
+                <% if opinion.likes.any? { |like| like.user_id == current_user.id } %>  
+                  <%= button_to opinion_like_path(opinion, opinion.likes.ids), class: 'btn', method: :delete do %>
+                    <i class="fas fa-heart text-danger"></i>
+                  <% end %>
+                <% else %>
+                  <%= button_to opinion_likes_path(opinion), class: 'btn', method: :post do %>
+                     <i class="fas fa-heart text-white"></i>
+                  <% end %>
+                <% end %>
+              </div>
+              <% if opinion.likes.any? %>
+                 <div style="margin-top:5px;"><%= opinion.likes.count %> <%= (opinion.likes.count) == 1 ? 'Like' : 'Likes'%></div>
               <% end %>
-            </span>
+            </div>
           </div>
           
-         <div class="mr-3">
+         <div class="mr-3 mt-2">
            <%= link_to edit_opinion_path(opinion) do %>
             <span class="icon-color"><i class="fas fa-pencil-alt "></i></span>
           <% end %>
          </div>
   
-         <div>
+         <div class="mt-2">
            <%= link_to opinion_path(opinion), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-default' do %>
             <span class="icon-color"><i class="fas fa-trash-alt"></i></span>   
           <% end %>
          </div>
-          
+
         </div>
       </div>
       

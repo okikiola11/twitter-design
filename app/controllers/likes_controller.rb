@@ -1,9 +1,15 @@
 class LikesController < ApplicationController
-  before_action :find_opinion
+
 
   def create
-    @opinion.likes.create(user_id: current_user.id)
-    redirect_to opinion_path(@opinion)
+    Like.create(user_id: current_user.id, opinion_id: params[:opinion_id])
+    redirect_back fallback_location: root_path
+  end
+
+  def destroy
+    @like = Like.find_user_like(current_user.id, params[:opinion_id])
+    @like.destroy
+    redirect_to root_path
   end
 
   private
@@ -11,4 +17,10 @@ class LikesController < ApplicationController
   def find_opinion
     @opinion = Opinion.find(params[:opinion_id])
   end
+
+  # def create
+  #   if already_liked?
+  #     flash[:notice] = 'You '
+  #   end
+  # end
 end

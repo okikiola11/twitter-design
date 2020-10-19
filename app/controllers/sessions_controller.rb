@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username].downcase)
     if user
       log_in user
-      #redirect_back_or user
       redirect_to root_path(user)
     else
       flash.now[:danger] = 'Invalid username'
