@@ -1,6 +1,7 @@
 class OpinionsController < ApplicationController
   before_action :set_opinion, only: [:show, :edit, :update]
   before_action :logged_in_user
+  before_action :correct_user, only: [:edit, :update]
 
   def index
     @opinions = Opinion.all.order('created_at DESC')
@@ -19,7 +20,7 @@ class OpinionsController < ApplicationController
     if @opinion.save
       flash[:notice] = 'Opinion was successfully created'  
     else
-      flash[:danger] = 'Could not save your opinion, Pleas try again!!!'
+      flash[:alert] = 'Could not save your opinion, Please try again!!!'
     end
     redirect_to root_path
   end 
@@ -48,5 +49,13 @@ class OpinionsController < ApplicationController
 
   def set_opinion
     @opinion = Opinion.find([params[:id]])
+  end
+
+  def correct_user
+    @opinion = Opinion.find(params[:id])
+    unless current_user?(@opinion.author)
+      flash[:alert] = 'You cannot perform this action'
+      redirect_to root_path
+    end
   end
 end
