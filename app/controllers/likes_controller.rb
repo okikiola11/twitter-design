@@ -1,9 +1,8 @@
 class LikesController < ApplicationController
 
-
   def create
     Like.create(user_id: current_user.id, opinion_id: params[:opinion_id])
-    redirect_back fallback_location: root_path
+    redirect_to root_path
   end
 
   def destroy
@@ -12,15 +11,4 @@ class LikesController < ApplicationController
     redirect_to root_path
   end
 
-  private
-
-  def find_opinion
-    @opinion = Opinion.find(params[:opinion_id])
-  end
-
-  # def create
-  #   if already_liked?
-  #     flash[:notice] = 'You '
-  #   end
-  # end
 end
