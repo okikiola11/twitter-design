@@ -1,5 +1,4 @@
 class FollowingsController < ApplicationController
-
   def create
     user = User.find(params[:followed_id])
     current_user.follow(user)
@@ -11,5 +10,4 @@ class FollowingsController < ApplicationController
     current_user.unfollow(user)
     redirect_to root_path
   end
-
 end
