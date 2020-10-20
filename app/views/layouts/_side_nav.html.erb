@@ -1,15 +1,6 @@
 <div class="side-nav">
   <div class="user-profile d-flex pt-5 px-md-5">
-    <div>
-      <figure class="image is-24x24">
-        <% unless current_user.photo.nil? %>
-          <%= image_tag current_user.photo.thumb.url, class:"avatar" %>    
-        <% else %>
-          <img src="https://via.placeholder.com/50" alt="">
-        <% end %>
-
-      </figure>
-    </div>
+    <div><%= avatar_url %></div>
     <h6 class="pl-3 pt-3"><%= current_user.fullname %></h6>
   </div>
 

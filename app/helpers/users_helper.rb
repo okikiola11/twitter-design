@@ -1,4 +1,13 @@
 module UsersHelper
+  # user avatar(avatar url)
+  def user_avatar
+     if @current_user.photo.nil?
+      avatar_url @current_user
+     else 
+       image_tag current_user.photo.thumb.url 
+     end 
+  end
+
   def user_coverimage(user)
     if user.coverimage.nil?
       puts 'get in here'
