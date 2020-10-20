@@ -4,5 +4,5 @@ class Opinion < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
-  validates :Text, presence: true
+  validates :Text, presence: true, length: { minimum: 2 }
 end
