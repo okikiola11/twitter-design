@@ -12,5 +12,4 @@ RSpec.feature 'Authentications', type: :feature do
     fill_in 'user_fullname', with: 'jane doe'
     click_button 'Sign up'
   end
-
 end
