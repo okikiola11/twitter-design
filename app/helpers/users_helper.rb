@@ -30,4 +30,12 @@ module UsersHelper
   def opinion_likes_count(opinion)
     opinion.likes.count == 1 ? 'Like' : 'Likes'
   end
+
+  def follow_unfollow(user)
+    if !current_user.following?(user)
+      render 'helper_partials/follow_btn', user: user
+    else
+      render 'helper_partials/unfollow_btn', user: user
+    end
+  end
 end
