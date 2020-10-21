@@ -28,6 +28,7 @@ gem 'rubocop', '~>0.81.0'
 # For image storage
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'figaro'
 
 group :production do
   # Use postgresql as the database for Active Record
