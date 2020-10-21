@@ -35,6 +35,7 @@
 
       </div>
     </div>
+
     <div class="pt-4 d-flex justify-content-around border-top">
       <div>
         <div class="text-center"><%= @user.opinions.count %></div>
@@ -47,6 +48,19 @@
       <div>
         <div class="text-center"><%= @user.following.count %></div>
         <div>Following</div>
+      </div>
+    </div>
+
+    <div class="mt-5">
+      <h6>FOLLOWED BY</h6>
+
+      <div>
+        <% @user.followers.each do |f| %>
+          <div class="d-flex">
+            <div><%= user_avatar @user, size: 50 %></div>
+            <div> <%= f.fullname %> </div>
+          </div>
+        <% end %>
       </div>
     </div>
 
