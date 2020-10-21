@@ -1,26 +1,17 @@
 module UsersHelper
-  # user avatar(avatar url)
-  def user_avatar
-    if @current_user.photo.nil?
-      avatar_url @current_user
-    else
-      image_tag current_user.photo.thumb.url
-    end
-  end
-
-  def user_coverimage(user)
-    if user.coverimage.nil?
-      puts 'get in here'
+  def profile_coverimage(user)
+    if user[:coverimage].nil?
+      cover_image user.id
     else
       render 'helper_partials/show_cover_img', user: user
     end
   end
 
   def opinion_avatar(opinion)
-    if opinion.author.photo.nil?
-      puts 'get in here'
+    if opinion.author[:photo].nil?
+      user_avatar opinion.author, size: 50
     else
-      image_tag opinion.author.photo.thumb.url
+      image_tag opinion.author[:photo].thumb.url
     end
   end
 

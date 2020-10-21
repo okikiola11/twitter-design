@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
     if @user.save
       log_in @user
-      flash[:notice] = 'Successfully registered'
+      flash[:notice] = "Welcome, #{@user.username} to Twitter"
       redirect_to root_path
     else
       render :new
