@@ -46,7 +46,7 @@ To get a local copy up and running follow these simple example steps:
 - Open http://localhost:3000/ in your browser
 
 ### Link on Heroku
-https://glacial-shelf-88307.herokuapp.com/login
+https://glacial-shelf-88307.herokuapp.com/signup
 
 
 ![screenshot](app/assets/images/screenshot.png)
