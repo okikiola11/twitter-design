@@ -45,10 +45,10 @@ To get a local copy up and running follow these simple example steps:
 
 - Open http://localhost:3000/ in your browser
 
-![screenshot](screenshot.png)
+![screenshot](app/assets/images/screenshot.png)
 
-![screenshot](screenshot.jpg)
 
+![screenshot](app/assets/images/screenshot1.jpg)
 
 ## Author
 - Okikiola Apelehin
