@@ -28,10 +28,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'figaro'
+gem 'pg', '>= 0.18', '< 2.0'
 
 group :production do
   # Use postgresql as the database for Active Record
-  gem 'pg', '>= 0.18', '< 2.0'
+  
 end
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -56,7 +57,6 @@ group :development do
   gem 'rubocop', '~>0.81.0'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  
 end
 
 group :test do
