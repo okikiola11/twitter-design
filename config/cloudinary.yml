@@ -1,19 +1,19 @@
-# development:
-#   cloud_name: <%= ENV["cloud_name"] %>
-#   api_key: <%= ENV["api_key"] %>
-#   api_secret: <%= ENV["api_secret"] %>
-#   enhance_image_tag: true
-#   static_file_support: false
-# production:
-#   secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
-#   cloud_name: <%= ENV["cloud_name"] %>
-#   api_key: <%= ENV["api_key"] %>
-#   api_secret: <%= ENV["api_secret"] %>
-#   enhance_image_tag: true
-#   static_file_support: true
-# test:
-#   cloud_name: cloud_name
-#   api_key: <%= ENV["API_KEY"] %>
-#   api_secret: <%= ENV["API_SECRET"] %>
-#   enhance_image_tag: true
-#   static_file_support: false
+development:
+  cloud_name: <%= ENV["cloud_name"] %>
+  api_key: <%= ENV["api_key"] %>
+  api_secret: <%= ENV["api_secret"] %>
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+  cloud_name: <%= ENV["cloud_name"] %>
+  api_key: <%= ENV["api_key"] %>
+  api_secret: <%= ENV["api_secret"] %>
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: cloud_name
+  api_key: <%= ENV["API_KEY"] %>
+  api_secret: <%= ENV["API_SECRET"] %>
+  enhance_image_tag: true
+  static_file_support: false
