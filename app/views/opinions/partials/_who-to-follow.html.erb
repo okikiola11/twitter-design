@@ -10,7 +10,7 @@
                       <%= user_avatar user, size: 40, class:"rounded-circle" %> 
                   <% else %>
                       <div class="d-flex py-2">
-                        <%= cl_image_tag user.photo.thumb.url, class:"rounded-circle" %>
+                        <%= image_tag user.photo.thumb.url, class:"rounded-circle" %>
                       </div>
                   <% end %> 
               </div>
