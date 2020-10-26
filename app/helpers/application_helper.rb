@@ -7,6 +7,6 @@ module ApplicationHelper
   end
 
   def cover_image(_user)
-    image_tag('cover-image', alt: @user.username, class: 'cover-img')
+    image_tag('coverimage', alt: @user.username, class: 'cover-img')
   end
 end
