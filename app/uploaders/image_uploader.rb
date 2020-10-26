@@ -3,6 +3,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
+  include Sprockets::Rails::Helper
+  
   include Cloudinary::CarrierWave
 
   # Choose what kind of storage to use for this uploader:
