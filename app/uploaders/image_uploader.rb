@@ -2,8 +2,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
-
-  include Sprockets::Rails::Helper
   
   include Cloudinary::CarrierWave
 
@@ -47,13 +45,6 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   CarrierWave.configure do |config|
     config.cache_storage = :file
-
-
-    config.fog_credentials = {
-      :cloud_name             => 'dqyaazwe7',                        # required
-      :api_key                => 979745235194575,                        # required
-      :api_secret             => 'DSPznsOdDDBQiFdzC0D2b8FK-Ow',                     # required
-    }
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
