@@ -30,10 +30,6 @@ gem 'cloudinary'
 gem 'figaro'
 gem 'pg', '>= 0.18', '< 2.0'
 
-group :production do
-  # Use postgresql as the database for Active Record
-end
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
