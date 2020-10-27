@@ -52,7 +52,7 @@ https://glacial-shelf-88307.herokuapp.com/signup
 ![screenshot](app/assets/images/screenshot.png)
 
 
-![screenshot](app/assets/images/screenshot1.jpg)
+![screenshot](app/assets/images/screenshot1.png)
 
 ## Author
 - Okikiola Apelehin

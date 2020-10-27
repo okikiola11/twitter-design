@@ -11,7 +11,7 @@ module UsersHelper
     if opinion.author[:photo].nil?
       user_avatar opinion.author, size: 50
     else
-      image_tag opinion.author[:photo].thumb.url
+      image_tag opinion.author.photo.thumb.url
     end
   end
 
