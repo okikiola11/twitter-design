@@ -32,7 +32,6 @@ gem 'pg', '>= 0.18', '< 2.0'
 
 group :production do
   # Use postgresql as the database for Active Record
-  
 end
 
 # Reduces boot times through caching; required in config/boot.rb
