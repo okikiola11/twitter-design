@@ -25,6 +25,7 @@
 - Ruby
 - Ruby on Rails
 - RSpec and Capybara
+- PostgresSQL
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps:
@@ -44,6 +45,16 @@ To get a local copy up and running follow these simple example steps:
 - rspec spec/models/user_spec.rb (*** for testing ***)
 
 - Open http://localhost:3000/ in your browser
+
+
+## Set-up
+- Set up the cloudinary configuration on a new file with 
+
+![screenshot](app/assets/images/screenshot3.png)
+
+- Call this file from any newly created file in the config directory using ENV variables
+![screenshot](app/assets/images/screenshot2.png)
+
 
 ### Link on Heroku
 https://glacial-shelf-88307.herokuapp.com/signup

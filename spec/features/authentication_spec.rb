@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Authentications', type: :feature do
   before :each do
-    @user = User.create(id: 1, fullname: 'John doe', username: 'user33')
+    @user = User.create(fullname: 'John doe', username: 'user33')
   end
 
   it 'requires user sign up' do
