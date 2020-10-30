@@ -42,7 +42,7 @@ To get a local copy up and running follow these simple example steps:
 - rails db:create
 - rails db:migrate
 - rails server
-- rspec spec/models/user_spec.rb (*** for testing ***)
+- rspec --format documentation (*** for testing ***)
 
 - Open http://localhost:3000/ in your browser
 
@@ -57,7 +57,7 @@ To get a local copy up and running follow these simple example steps:
 
 
 ### Link on Heroku
-https://glacial-shelf-88307.herokuapp.com/signup
+https://glacial-shelf-88307.herokuapp.com/
 
 
 ![screenshot](app/assets/images/screenshot.png)
