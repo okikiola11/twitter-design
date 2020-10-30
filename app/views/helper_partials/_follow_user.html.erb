@@ -1,0 +1,10 @@
+<div class="d-flex">
+    <div>
+      <% if user[:photo].nil? %>
+        <%= user_avatar user, size: 40, class: 'rounded-circle' %>
+      <% else %>
+        <%= image_tag user.photo.thumb.url, class: 'rounded-circle' %> 
+      <% end %>
+    </div>
+    <div><div class="pl-2 pt-3"><h6><%= link_to user.fullname, user_path(user) %></h6></div></div>
+</div>  

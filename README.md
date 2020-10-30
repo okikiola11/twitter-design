@@ -48,11 +48,9 @@ To get a local copy up and running follow these simple example steps:
 
 
 ## Set-up
-- Set up the cloudinary configuration on a new file with 
+- Set up the cloudinary configuration on a new file (as seen in config/cloudinary.rb)
 
-![screenshot](app/assets/images/screenshot3.png)
-
-- Call this file from any newly created file in the config directory using ENV variables
+- Call this cloudinary credentials from any newly created file in the config directory using ENV variables
 ![screenshot](app/assets/images/screenshot2.png)
 
 

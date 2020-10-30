@@ -15,14 +15,6 @@ module UsersHelper
     end
   end
 
-  def likes_dislike(opinion)
-    if opinion.likes.any? { |like| like.user_id == current_user.id }
-      render 'helper_partials/unlike', opinion: opinion
-    else
-      render 'helper_partials/likes', opinion: opinion
-    end
-  end
-
   def opinion_likes(opinion)
     opinion.likes.count
   end

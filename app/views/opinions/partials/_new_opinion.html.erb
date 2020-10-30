@@ -18,15 +18,7 @@
             <div class="">
               <div class="d-flex"> 
                 <div class="icon-color ">
-                  <% if opinion.likes.any? { |like| like.user_id == current_user.id } %>  
-                    <%= link_to opinion_like_path(opinion, opinion.likes.ids), class: 'btn', method: :delete do %>
-                      <i class="fas fa-heart text-danger"></i>
-                    <% end %>
-                  <% else %>
-                    <%= link_to opinion_likes_path(opinion), class: 'btn', method: :post do %>
-                      <span class="home"><i class="fas fa-heart"></i></span>
-                    <% end %>
-                  <% end %>
+                  <%= likes_dislike(opinion) %>  
                 </div>
                 <% if opinion.likes.any? %>
                   <div style="margin-top:5px;"><%= opinion_likes(opinion) %> <%= opinion_likes_count(opinion) %></div>
