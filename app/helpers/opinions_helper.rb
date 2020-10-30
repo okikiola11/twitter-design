@@ -1,8 +1,8 @@
 module OpinionsHelper
   def follow_suggestions(user)
     return if current_user.following?(user)
-    
-    render 'helper_partials/follow_user', user: user  
+
+    render 'helper_partials/follow_user', user: user
   end
 
   def likes_dislike(opinion)
@@ -12,5 +12,4 @@ module OpinionsHelper
       render 'helper_partials/likes', opinion: opinion
     end
   end
-
 end
