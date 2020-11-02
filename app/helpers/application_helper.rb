@@ -9,8 +9,4 @@ module ApplicationHelper
   def cover_image(_user)
     image_tag('cover-image.jpeg', alt: @user.username, class: 'cover-img')
   end
-
-  def user_image(_user)
-    image_tag('default.jpg', alt: @user.username, class: 'rounded-circle')
-  end
 end

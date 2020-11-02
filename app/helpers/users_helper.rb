@@ -7,11 +7,11 @@ module UsersHelper
     end
   end
 
-  def user_photo(_user)
-    if @user[:photo].nil?
-      user_image(@user)
+  def user_photo(user)
+    if user[:photo].nil?
+      user_avatar user, size: 40, class: 'rounded-circle'
     else
-      image_tag @user.photo.thumb.url, class: 'rounded-circle'
+      image_tag user.photo.thumb.url, class: 'rounded-circle'
     end
   end
 
