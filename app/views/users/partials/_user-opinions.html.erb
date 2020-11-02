@@ -5,7 +5,7 @@
         <div class="d-flex mb-1">
           <div><%= opinion_avatar(opinion) %></div>
           <div class="pl-3">
-            <div><%= link_to opinion.author.fullname, user_path(opinion.author.id) %></div>
+            <div><%= opinion.author.fullname %></div>
             <div><%= opinion.Text %></div>
           </div>
         </div>    
@@ -16,9 +16,7 @@
               <div class="icon-color ">
                   <%= likes_dislike(opinion) %>
               </div>
-              <% if opinion.likes.any? %>
-                 <div style="margin-top:5px;"><%= opinion_likes(opinion) %> <%= opinion_likes_count(opinion) %></div>
-              <% end %>
+              <%= user_opinion_likes(opinion) %>
             </div>
           </div>
           

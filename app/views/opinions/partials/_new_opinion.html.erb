@@ -20,9 +20,7 @@
                 <div class="icon-color ">
                   <%= likes_dislike(opinion) %>  
                 </div>
-                <% if opinion.likes.any? %>
-                  <div style="margin-top:5px;"><%= opinion_likes(opinion) %> <%= opinion_likes_count(opinion) %></div>
-                <% end %>
+                <%= user_opinion_likes(opinion) %>
               </div>
             </div> 
 
