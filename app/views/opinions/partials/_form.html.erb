@@ -1,0 +1,7 @@
+<div>
+  <%= form_with(model: @opinion, local: true) do |f| %>
+    <%= f.text_area :Text, placeholder: 'Compose new tweet', class: 'mb-1 form-control' %>
+  
+     <%= f.submit 'Post', class: 'mt-2 btn bg-color color' %>
+  <% end %>
+</div>

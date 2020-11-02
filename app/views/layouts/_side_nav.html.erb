@@ -1,0 +1,33 @@
+<div class="side-nav">
+  <div class="user-profile d-flex pt-5 px-md-5">
+
+    <div>
+     <% if current_user[:photo].nil? %>
+        <%= user_avatar current_user, size: 50 %>
+      <% else %>
+        <%= image_tag current_user.photo.thumb.url %>
+      <% end %>  
+    </div>
+
+    <h6 class="pl-3 pt-3"><%= current_user.fullname.upcase %></h6>
+  </div>
+
+  <div class="user-followings d-flex justify-content-around py-4">
+    <div class="following">
+      <h5 class="text-center"><%= current_user.following.count %></h5>
+      <h6>Following</h6>
+    </div>
+
+    <div class="followers">
+      <h5 class="text-center"><%= current_user.followers.count %></h5>
+      <h6>Followers</h6>
+    </div>
+  </div>
+
+  <div class="links py-3 px-md-5">
+    <div class="home py-3"><%= link_to 'HOME', root_path %></div>
+    <div class="home py-3"><%= link_to 'PROFILE', user_path(@current_user) %></div>
+    <div><%= link_to 'LOG OUT', logout_path, class: 'home py-3', method: :delete %></div>
+  </div>
+ 
+</div>

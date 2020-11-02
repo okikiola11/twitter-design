@@ -1,0 +1,44 @@
+<div>
+  <% @opinions.each do |opinion| %>
+    <div class="pt-3 pl-2">
+      <div>
+        <div class="d-flex mb-1">
+        
+          <div><%= opinion_avatar(opinion) %></div>
+          
+          <div class="pl-3">
+            <div><%= link_to opinion.author.fullname, user_path(opinion.author.id) %></div>
+            <div><%= opinion.Text %></div>
+          </div>
+        </div>    
+
+        <div class="d-flex justify-content-between">
+        
+          <div class="d-flex mt-1">    
+            <div class="">
+              <div class="d-flex"> 
+                <div class="icon-color ">
+                  <%= likes_dislike(opinion) %>  
+                </div>
+                <%= user_opinion_likes(opinion) %>
+              </div>
+            </div> 
+
+            <div class="mr-3 mt-2">
+              <%= link_to edit_opinion_path(opinion) do %>
+                <span class="icon-color"><i class="fas fa-pencil-alt "></i></span>
+              <% end %>
+            </div>
+
+          </div>
+
+          <div class="justify-content-end">
+            <p><%= time_ago_in_words(opinion.created_at) %></p>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  <% end %>
+</div>

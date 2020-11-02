@@ -1,0 +1,126 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff !important;
+}
+
+.bg-color {
+  background-color: rgb(80, 164, 226);
+}
+
+.color {
+  color: #fff;
+}
+
+.icon-color,
+.color-btn {
+  color: rgb(80, 164, 226) !important;
+}
+
+.side-nav {
+  background: #213246;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  width: 315px;
+  overflow-y: hidden !important;
+}
+
+.bg-height {
+  height: calc(100% - 100px);
+}
+
+.side-pad {
+  padding-left: 0 !important;
+  background-color: rgb(231, 235, 238);
+}
+
+.container-fluid {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.user-profile h6 {
+  color: #667b90;
+}
+
+.following h5,
+.following h6,
+.followers h5,
+.followers h6,
+.home {
+  color: #667b90;
+}
+
+.home a:active {
+  cursor: pointer;
+  color: #667b90;
+}
+
+.opinion-conteiner {
+  border-right: solid 1px rgb(224, 222, 222);
+}
+
+.opinion-partials {
+  background-color: #fff;
+}
+
+.font-type {
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.followed-by {
+  font-size: 0.9rem;
+}
+
+.cover-img {
+  width: 100%;
+  height: 300px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.btn-bg {
+  background-color: transparent;
+}
+
+.notice {
+  background-color: white;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 30%;
+}
