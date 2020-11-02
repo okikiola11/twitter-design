@@ -10,7 +10,7 @@ module UsersHelper
   def user_photo(_user)
     if @user[:photo].nil?
       user_image(@user)
-    else 
+    else
       image_tag @user.photo.thumb.url, class: 'rounded-circle'
     end
   end
@@ -32,7 +32,7 @@ module UsersHelper
   end
 
   def follow_unfollow_users
-    follow_unfollow(@user) unless current_user?(@user) 
+    follow_unfollow(@user) unless current_user?(@user)
   end
 
   def follow_unfollow(user)
@@ -44,8 +44,6 @@ module UsersHelper
   end
 
   def user_opinion_likes(opinion)
-    if opinion.likes.any? 
-      render 'opinions/partials/opinion_likes', opinion: opinion
-    end
+    render 'opinions/partials/opinion_likes', opinion: opinion if opinion.likes.any?
   end
 end
