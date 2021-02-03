@@ -78,7 +78,7 @@ https://glacial-shelf-88307.herokuapp.com/
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/praz99/twitter-design/issues).
+Feel free to check the [issues page](https://github.com/okikiola11/twitter-design/issues).
 
 ## Show your support
 
